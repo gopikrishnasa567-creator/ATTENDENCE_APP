@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
+<body style="background:#f0f2f5;">
+<div class="dash">
+    <div class="navbar">
+        <span>👋 Welcome, {{ name }} &nbsp;|&nbsp; Roll No: {{ roll_no }}</span>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div class="card">
+        <h3 style="margin-bottom:16px;">📊 Subject-wise Attendance</h3>
+        <table>
+            <tr><th>Subject</th><th>Total Classes</th><th>Present</th><th>Percentage</th><th>Progress</th></tr>
+            {% for s in stats %}
+            <tr>
+                <td>{{ s.subject }}</td>
+                <td>{{ s.total }}</td>
+                <td>{{ s.present }}</td>
+                <td class="{{ 'badge-low' if s.percentage < 75 else 'badge-ok' }}">{{ s.percentage }}%</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:{{ s.percentage }}%; background:{{ '#e74c3c' if s.percentage < 75 else '#27ae60' }};"></div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="card">
+        <h3 style="margin-bottom:16px;">📅 Weekly Timetable</h3>
+        <table>
+            <tr><th>Day</th><th>Subject</th><th>Start</th><th>End</th></tr>
+            {% for t in timetable %}
+            <tr>
+                <td>{{ t[4] }}</td>
+                <td>{{ t[1] }}</td>
+                <td>{{ t[5] }}</td>
+                <td>{{ t[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

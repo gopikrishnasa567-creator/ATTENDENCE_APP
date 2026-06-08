@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# Database credentials
+config.py
+
+# Static uploads
+static/uploads/

@@ -1,0 +1,117 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-image: url('C:\Users\gopik\Downloads\school.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    background: white;
+    padding: 40px 35px;
+    border-radius: 16px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+}
+
+h2 { color: #1a1a2e; margin-bottom: 24px; font-size: 22px; }
+
+select, input {
+    width: 100%;
+    padding: 11px 14px;
+    margin: 8px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+select:focus, input:focus { border-color: #0f3460; }
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0f3460;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover { background: #e94560; }
+
+.error { color: red; font-size: 13px; margin-bottom: 10px; }
+
+/* Dashboard */
+.dash { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+
+.navbar {
+    background: #0f3460;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.navbar a { color: #e94560; text-decoration: none; font-weight: bold; }
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    background: #0f3460;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+tr:hover td { background: #f8f9ff; }
+
+.badge-present { background:#e6f4ea; color:#2d7a3a; padding:3px 10px; border-radius:20px; font-size:12px; }
+.badge-absent  { background:#fdecea; color:#c0392b; padding:3px 10px; border-radius:20px; font-size:12px; }
+.badge-low     { background:#fdecea; color:#c0392b; font-weight:bold; }
+.badge-ok      { background:#e6f4ea; color:#2d7a3a; font-weight:bold; }
+
+.progress-bar {
+    background: #eee;
+    border-radius: 20px;
+    height: 10px;
+    width: 100%;
+}
+
+.progress-fill {
+    height: 10px;
+    border-radius: 20px;
+    background: #0f3460;
+}

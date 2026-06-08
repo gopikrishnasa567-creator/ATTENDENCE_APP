@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="box">
+    <img src="/static/school.png" alt="School Logo" class="logo">
+    <h2>Attendance System</h2>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="/login" method="POST">
+        <select name="role" required>
+            <option value="">-- Select Role --</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+        </select>
+        <input type="text" name="username" placeholder="Username / Roll Number" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>
