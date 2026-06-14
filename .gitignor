@@ -14,3 +14,4 @@ config.py
 
 # Static uploads
 static/uploads/
+.env

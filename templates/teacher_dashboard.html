@@ -1,57 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head><title>Teacher Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
-<body style="background:#f0f2f5;">
-<div class="dash">
-    <div class="navbar">
-        <span>🎓 Teacher: {{ username }}</span>
-        <a href="/logout">Logout</a>
-    </div>
+    <!DOCTYPE html>
+    <html>
+    <head><title>Teacher Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
+    <body style="background:#f0f2f5;">
+    <div class="dash">
+        <div class="navbar">
+            <span>🎓 Teacher: {{ username }}</span>
+            <a href="/logout">Logout</a>
+        </div>
 
-    <div class="card">
-        <h3 style="margin-bottom:16px;">✅ Mark Attendance</h3>
-        <form action="/mark_attendance" method="POST">
-            <select name="subject_id" required style="margin-bottom:12px;">
-                <option value="">-- Select Subject --</option>
-                {% for s in subjects %}
-                <option value="{{ s[0] }}">{{ s[4] }} — {{ s[1] }} ({{ s[5] }} to {{ s[6] }})</option>
-                {% endfor %}
-            </select>
-            <!-- Date is auto picked from system -->
-<p style="margin-bottom:16px; color:#555;">
-    📅 Date: <strong id="today-date"></strong>
-</p>
+        <div class="card">
+            <h3 style="margin-bottom:16px;">✅ Mark Attendance</h3>
+            <form action="/mark_attendance" method="POST">
+                <select name="subject_id" required style="margin-bottom:12px;">
+                    <option value="">-- Select Subject --</option>
+                    {% for s in subjects %}
+                    <option value="{{ s[0] }}">{{ s[4] }} — {{ s[1] }} ({{ s[5] }} to {{ s[6] }})</option>
+                    {% endfor %}
+                </select>
+                <!-- Date is auto picked from system -->
+    <p style="margin-bottom:16px; color:#555;">
+        📅 Date: <strong id="today-date"></strong>
+    </p>
 
-<script>
-    const today = new Date();
-    const formatted = today.toLocaleDateString('en-IN', {
-        weekday: 'long', year: 'numeric',
-        month: 'long', day: 'numeric'
-    });
-    document.getElementById('today-date').innerText = formatted;
-</script>
-            <table>
-                <tr><th>Roll No</th><th>Present</th><th>Absent</th></tr>
-                <!-- In real app, load students dynamically -->
-                <tr>
-                    <td>101 — Gopi</td>
-                    <td><input type="radio" name="status_101" value="present" checked></td>
-                    <td><input type="radio" name="status_101" value="absent"></td>
-                </tr>
-                <tr>
-                    <td>102 — Priya</td>
-                    <td><input type="radio" name="status_102" value="present" checked></td>
-                    <td><input type="radio" name="status_102" value="absent"></td>
-                </tr>
-                <tr>
-                    <td>103 — Ravi</td>
-                    <td><input type="radio" name="status_103" value="present" checked></td>
-                    <td><input type="radio" name="status_103" value="absent"></td>
-                </tr>
-            </table>
-            <button type="submit" style="margin-top:16px;">Submit Attendance</button>
-        </form>
+    <script>
+        const today = new Date();
+        const formatted = today.toLocaleDateString('en-IN', {
+            weekday: 'long', year: 'numeric',
+            month: 'long', day: 'numeric'
+        });
+        document.getElementById('today-date').innerText = formatted;
+    </script>
+                <table>
+                    <tr><th>Roll No</th><th>Present</th><th>Absent</th></tr>
+                    <!-- In real app, load students dynamically -->
+                    <tr>
+                        <td>101 — Gopi</td>
+                        <td><input type="radio" name="status_101" value="present" checked></td>
+                        <td><input type="radio" name="status_101" value="absent"></td>
+                    </tr>
+                    <tr>
+                        <td>102 — Priya</td>
+                        <td><input type="radio" name="status_102" value="present" checked></td>
+                        <td><input type="radio" name="status_102" value="absent"></td>
+                    </tr>
+                    <tr>
+                        <td>103 — Ravi</td>
+                        <td><input type="radio" name="status_103" value="present" checked></td>
+                        <td><input type="radio" name="status_103" value="absent"></td>
+                    </tr>
+                </table>
+                <button type="submit" style="margin-top:16px;">Submit Attendance</button>
+            </form>
+        </div>
     </div>
-</div>
-</body>
-</html>
+    </body>
+    </html>
